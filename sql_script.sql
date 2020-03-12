@@ -32,7 +32,7 @@ ADD PRIMARY KEY (id);
 
 CREATE TABLE student
 (
-id INT NOT NULL,
+id INT NOT NULL AUTO_INCREMENT,
 study_group_id INT NOT NULL,
 surname TEXT NULL,
 name TEXT NULL,
