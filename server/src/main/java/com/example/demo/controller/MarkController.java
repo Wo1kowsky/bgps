@@ -5,6 +5,7 @@ import com.example.demo.model.Mark;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/mark")
 public class MarkController {
 

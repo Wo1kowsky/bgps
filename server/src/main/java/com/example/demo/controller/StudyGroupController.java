@@ -7,6 +7,7 @@ import  com.example.demo.model.StudyGroup;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class StudyGroupController {
     private final StudyGroupJdbc studyGroupJdbc;
 

@@ -7,6 +7,7 @@ import com.example.demo.dao.StudentJdbc;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("student")
 public class StudentController {
     private final StudentJdbc studentJdbc;

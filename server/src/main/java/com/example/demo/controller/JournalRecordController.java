@@ -3,11 +3,12 @@ package com.example.demo.controller;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.dao.JournalRecordJdbc;
 import com.example.demo.model.JournalRecord;
-//import com.example.demo.model.JournalRecordExpanded;
+import com.example.demo.model.JournalRecordExpanded;
 
 import java.util.List;
 
 @RequestMapping("journal")
+@CrossOrigin
 @RestController
 public class JournalRecordController {
     private final JournalRecordJdbc journalRecordJdbc;
@@ -21,13 +22,18 @@ public class JournalRecordController {
         return journalRecordJdbc.get(id);
     }
 
+    @GetMapping
+    public List<JournalRecordExpanded> getAllJournalRecords() {
+        return journalRecordJdbc.getAll();
+    }
+
     @GetMapping("/student/{studentId}")
     public List<JournalRecord> getJournalRecordsByStudent(@PathVariable int studentId) {
         return journalRecordJdbc.getAllByStudent(studentId);
     }
 
     @GetMapping("/study_group/{studyGroupId}")
-    public List<JournalRecord> getJournalRecordsByStudyGroup(@PathVariable int studyGroupId) {
+    public List<JournalRecordExpanded> getJournalRecordsByStudyGroup(@PathVariable int studyGroupId) {
         return journalRecordJdbc.getAllByStudyGroup(studyGroupId);
     }
 
