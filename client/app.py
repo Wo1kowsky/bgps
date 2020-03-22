@@ -14,10 +14,6 @@ print(unique_subjects)
 for i, sub in enumerate(unique_subjects):
     Label(text=sub).grid(row=0, column=i + 2)
 
-# for i, st in enumerate(unique_students):
-#     Label(text=i + 1).grid(row=i + 1, column=0)
-#     Label(text=st).grid(row=i + 1, column=1)
-
 unique_records = {}
 for st in unique_students:
     unique_records[st] = {}

@@ -60,6 +60,13 @@ public class StudentJdbc {
         return jdbcTemplate.update("DELETE FROM STUDENT WHERE id = ?", id);
     }
 
+    public List<Student> getAllLocal() {
+        return jdbcTemplate.query(
+                "SELECT * FROM student_local",
+                this::mapStudent
+        );
+    }
+
     private Student mapStudent(ResultSet resultSet, int i) throws SQLException {
         return new Student(
                 resultSet.getInt("id"),
